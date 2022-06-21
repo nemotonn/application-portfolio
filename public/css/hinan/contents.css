@@ -1,0 +1,79 @@
+.allow-right-link{
+  border-top: solid 2px #a9a9a9;
+  border-right: solid 2px #a9a9a9;
+  width: 9px;
+  height: 9px;
+  transform: rotate(45deg);
+  display: block;
+  margin: 0;
+}
+
+
+
+/* editlist レイアウト */
+.editlist-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.editlist-content{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
+
+}
+.editlist-content h2{
+  margin: 10px 0;
+  border-bottom: 2px solid lightgray;
+  width: 120px;
+  color: gray;
+}
+
+
+/* テーブルレイアウト　部品 */
+.editlist-table-box{
+  width: 100%;
+  padding-bottom: 40px;
+}
+.editlist-table{
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  width: 100%;
+}
+.editlist-table th{
+  height: 40px;
+}
+.editlist-table td{
+  height: 40px;
+  padding: 5px;
+  text-align: center;
+}
+.editlist-table tr{
+  background: #fff;
+}
+.editlist-table tr:nth-child(even){
+  background: #ececec;
+
+}
+.editlist-table thead tr{
+  /* background: #4B7BE5; */
+  /* background: #FFD870; */
+  /* background: #C7CAFF; */
+  /* background: #FFDB6E; */
+  background: #FFCC66;
+  color: #fff;
+}
+.editlist-table td:first-child, .editlist-table th:first-child{
+  border-radius: 10px 0 0 10px;
+}
+.editlist-table td:last-child, .editlist-table th:last-child{
+  border-radius: 0 10px 10px 0;
+}
+
+
+.table-a{
+  display: inline-block;
+}

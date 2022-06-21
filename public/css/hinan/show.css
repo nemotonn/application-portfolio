@@ -1,0 +1,73 @@
+
+/* show レイアウト */
+.show-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: gray;
+}
+.show-content{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 40px 0;
+
+}
+.show-table-box{
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+
+
+/* showテーブル 　部品*/
+.show-table{
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  width: 100%;
+}
+.show-table th{
+  height: 40px;
+  background: #F8B400;
+  color: #fff;
+}
+.show-table tbody{
+  background: #fff;
+}
+.show-table td{
+  height: 40px;
+  padding: 10px 20px;
+
+}
+.show-table td:first-child{
+  border-radius: 10px 0 0 10px;
+}
+.show-table td:last-child{
+  border-radius: 0 10px 10px 0;
+}
+.show-button-box{
+  display: flex;
+  justify-content: end;
+}
+
+
+/* ボタン部品 */
+.show-table a{
+  color: #fff;
+}
+.show-active-button{
+  padding: 5px 30px;
+  border-radius: 20px;
+  background: #F8B400;
+}
+
+.show-done-button{
+  padding: 5px 15px;
+  border-radius: 20px;
+  background: #FFEBD4;
+}
+
+/* show CSSアニメ */
+.show-active-button:hover{
+  opacity: 0.6;
+}

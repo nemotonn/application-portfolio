@@ -1,0 +1,1273 @@
+
+
+body{
+  /* font-family: "YuGothic", "Yu Gothic", "ヒラギノ角ゴシック","Verdana","Helvetica", sans-serif; */
+  font-family: "ヒラギノ丸ゴ Pro W4", "ヒラギノ角ゴシック","Verdana","Helvetica", sans-serif;
+
+  margin: 0 auto;
+  color: #000;
+  font-size: 16px;
+
+  /* height: 100vh; */
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+li{
+  list-style-type: none;
+}
+button,label,a{
+  font-size: 16px;
+}
+button{
+  font-weight: normal;
+}
+
+
+
+/* フレーム ---------------------------------------------- */
+.wrapper{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.content-wrapper{
+  /* 元 wrapper-2 */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* overflow: hidden;  いったんためし　モバイル*/
+  background: #fcfcfc;
+}
+.main-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow-y: auto;
+}
+
+
+
+/* ヘッダー ----------------------------------------------*/
+header{
+  width: 100%;
+  /* height: 50px; */
+  height: 7%;
+  display: flex;
+  color: #fff;
+  position: relative;
+}
+.header-nav{
+  width: 100%;
+  height: 100%;
+  background: #7A82FD;
+
+  /* border-bottom: 2px solid #f5f5f5; */
+  display: flex;
+}
+.header-menu-box{
+  /* menu-content */
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.header-user-box{
+  /* user-content */
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+/* .title-icon{
+  display: flex;
+  align-items: center;
+} */
+
+
+/* 部品 */
+.header-menu-box h2{
+  margin: 0;
+  font-size: 20px;
+}
+
+/* ハンバーガー icon */
+.hum-icon{
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  margin: 5px 10px;
+  display: block;
+  border: none;
+  background: none;
+  transition: background-color .5s;
+}
+.hum-line-top, .hum-line-bottom{
+  display: block;
+  border: 1px solid #fff;
+  background: #fff;
+  width: 25px;
+  margin: 10px 0;
+}
+/* ユーザー icon */
+.user-icon{
+  border-radius: 50px;
+  width: 38px;
+  height: 38px;
+  margin: 5px 10px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border: none;
+
+  transition: background-color 0.7s;
+}
+
+
+/* JS ログアウトボックス */
+.logout-box{
+  /* width: 200px; */
+  /* height: 50px; */
+  padding: 10px 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px 0px lightgray;
+
+  position: absolute;
+  top: 45px;
+  right: 35px;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+
+  transform: translateX(130%);
+  transition: 0.5s;
+}
+
+
+/* 〜〜〜アニメーション 〜〜〜 */
+/* PCナビ　隠す */
+.nav-toggle{
+  display: none;
+}
+
+/* ログアウトボックス */
+.logout-toggle{
+  transform: translateX(0%);
+}
+
+
+
+
+/* サイドナビ ---------------------------------------------*/
+.pc-side-nav{
+  /* side-nav */
+  width: 15%;
+  height: 100%;
+}
+.pc-nav-box{
+  /* nav-content */
+  height: 100%;
+  border-right: 3px solid #f8f8f8;
+}
+
+/* 部品 */
+.nav-list{
+  margin: 0;
+  padding: 40px 20px;
+}
+.nav-list li{
+  margin: 20px 0;
+}
+.nav-list a{
+  margin-left: 5px;
+  transition: background-color 0.5s;
+  display: block;
+  border-radius: 5px;
+  padding: 5px;
+  color: gray;
+  font-size: 13px;
+}
+
+/* 〜〜〜アニメーション〜〜〜 */
+.active-nav{
+  border-left: 7px solid #7A82FD;
+}
+
+/* sidenav クリックイベント　隠す */
+.nav-toggle{
+  display: none;
+}
+
+/* hover */
+.nav-list a:hover{
+  background: rgba(61, 61, 64, 0.14);
+}
+
+
+
+
+/* index ---------------------------------------------------- */
+
+.calendar-container{
+  display: flex;
+  flex-direction: column;
+  /* height: 100%; */
+  height: auto;
+  width: 100%;
+  align-items: center;
+}
+.calendar-header{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.calendar-content-box{
+  /* calendar-content-box */
+  width: fit-content;
+  /* width: 95%; */
+  height: 100%;
+  background: #fff;
+  padding: 15px;
+  margin: 3px 10px;
+  border-radius: 10px;
+}
+
+
+/* ヘッダー　部品 */
+.c-header-text-box{
+  display: flex;
+  /* width: 20%; */
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+.c-header-text-box h2{
+  /* 元 ym-text */
+  font-size: 20px;
+  margin: 0;
+}
+.c-header-link-box{
+  /* ym-link */
+  display: flex;
+  /* width: 15%; */
+  justify-content: center;
+  margin: 0 20px;
+}
+.c-header-link-box a{
+  display: block;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+
+/* table　部品 */
+.calendar-table{
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.calendar-table th{
+  height: 10px;
+  font-size: 12px;
+}
+.calendar-table td{
+  border: solid 1px #E3E3E3;
+  height: 100px;
+  margin: 0;
+  vertical-align: top;
+}
+.calendar-table td a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.tr-line{
+  display: none;
+}
+
+/* table　td 中身　部品 */
+.calendar-td-box{
+  display: flex;
+  flex-direction: column;
+}
+.calendar-td-box div{
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* td テキスト */
+.text-sched{
+  font-size: 10px;
+  margin: 1px 1px;
+  padding: 2px;
+  background: #92B4EC;
+  border-radius: 2px;
+  color: #fff;
+}
+.text-day{
+  margin: 0;
+  font-size: 15px;
+}
+
+
+/* 違う月のカラー */
+.another-month-color{
+  background: #fcfcfc;
+}
+.another-month-color .text-day{
+  color: lightgray;
+}
+/* today カラー */
+.today-color{
+  width: 24px;
+  height: 24px;
+  background: #F8B400;
+  border-radius: 15px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 予定3件以上 アイコン*/
+.text-plus{
+  text-align: center;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  background: #FF6363;
+  border-radius: 15px;
+  font-size: 11px;
+  color: #fff;
+}
+
+/* アニメーション */
+
+
+
+
+
+
+
+
+
+/* 各コンテンツ　共通　---------------------------------------------------- */
+/* アイコン　部品 */
+
+.arrow-right-link{
+  border-top: solid 2px #a9a9a9;
+  border-right: solid 2px #a9a9a9;
+  transform: rotate(45deg);
+  display: block;
+  width: 9px;
+  height: 9px;
+}
+.arrow-left-link{
+  border-left: solid 2px #a9a9a9;
+  border-bottom: solid 2px #a9a9a9;
+  transform: rotate(45deg);
+  display: block;
+  width: 9px;
+  height: 9px;
+}
+
+
+
+
+
+/* レイアウト */
+.common-container{
+  width: 100%;
+  /* height: 100%; */
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  color: gray;
+}
+.editlist-box{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 30px 0;
+}
+
+
+.percentage-box h2, .editlist-box h2, .form-container h2{
+  margin: 5px 0;
+  /* border-bottom: 2px solid lightgray; */
+  width: fit-content;
+  color: gray;
+  font-size: 25px;
+}
+
+.percentage-table-box, .editlist-table-box, .show-table-box{
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.percentage-table, .editlist-table, .show-table{
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  width: 100%;
+}
+
+.percentage-table thead tr, .editlist-table thead tr{
+  background: #FFCC66;
+  color: #fff;
+}
+
+.percentage-table th, .editlist-table th{
+  height: 40px;
+}
+.percentage-table th:first-child,.editlist-table th:first-child{
+  border-radius: 10px 0 0 10px;
+}
+.percentage-table th:last-child,.editlist-table th:last-child{
+  border-radius: 0 10px 10px 0;
+}
+.percentage-table td:first-child,.editlist-table td:first-child, .show-table td:first-child{
+  border-radius: 10px 0 0 10px;
+}
+.percentage-table td:last-child,.editlist-table td:last-child, .show-table td:last-child{
+  border-radius: 0 10px 10px 0;
+}
+
+.percentage-table tr, .editlist-table tr, .show-table tr{
+  background: #fff;
+}
+
+.no-data-box{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+/* percentage --------------------------------------------------------- */
+.percentage-box{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 30px 0;
+}
+
+/* 部品 */
+.percentage-info-box{
+  display: flex;
+  justify-content: center;
+}
+.percentage-info-box div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.percentage-info-box a{
+  display: block;
+  padding: 10px;
+  margin: 0 10px;
+}
+.percentage-info-box p{
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+
+/* table 部品 */
+.percentage-table td{
+  height: 80px;
+  padding: 10px 20px;
+  text-align: center;
+}
+.chart-td{
+  width: 85%;
+  text-align: left !important;
+}
+
+
+/* チャート部品 */
+.chart-box{
+  display: flex;
+  flex-direction: column;
+}
+.chart-box p{
+  margin: 10px 0;
+}
+
+.chart-outer{
+  height: 10px;
+  width: 100%;
+  border-radius: 12px;
+  /* background: #FFEBD4; */
+  background: #E9E8E8;
+  overflow: hidden;
+}
+
+/* 〜〜〜アニメーション〜〜〜 */
+/* チャート */
+.chart-inner{
+  background: #F8B400;
+  height: 10px;
+  border-radius: 12px 0 0 12px;
+
+  animation-name: chart;
+  animation-duration: 2s;
+}
+@keyframes chart {
+  0%{
+    width: 0;
+  }
+}
+
+
+
+
+
+/* editlist --------------------------------------------------------- */
+
+/* table 部品 */
+.editlist-table td{
+  height: 40px;
+  padding: 5px;
+  text-align: center;
+}
+
+.editlist-table tr:nth-child(even){
+  background: #ececec;
+}
+.table-a{
+  display: inline-block;
+}
+
+
+
+/* show --------------------------------------------------------- */
+.show-box{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 40px 0;
+
+}
+.show-table td{
+  height: 40px;
+  padding: 10px 20px;
+}
+.show-button-box{
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* show ボタン部品 */
+.show-table a{
+  color: #fff;
+}
+.show-active-button{
+  padding: 5px 30px;
+
+  border-radius: 18px;
+  background: #F8B400;
+}
+.show-done-button{
+  padding: 5px 15px;
+
+  border-radius: 18px;
+  background: #FFEBD4;
+
+}
+
+/* 〜〜〜アニメーション〜〜〜 */
+
+
+
+
+
+/* form edit/create 共通　--------------------------------------------------------- */
+
+.form-container{
+  /* form-content */
+  display: flex;
+  flex-direction: column;
+  width: 43%;
+  margin: 30px 0;
+}
+
+.form-outer-box{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+}
+.form-box{
+  height: fit-content;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+}
+.form-box ul{
+  padding: 0;
+  margin: 30px 20px;
+}
+.form-box li{
+  margin: 10px 0;
+}
+
+
+/* 入力フォーム部品 */
+.text-form-control, .select-form-control, .number-form-control{
+  width: 100%;
+  height: 30px;
+  border-radius: 8px;
+  border: solid 1px lightgray;
+  outline-color: #7A82FD;
+  appearance: none;
+  padding: 0 2px;
+}
+.select-form-control{
+  width: 30%;
+}
+.number-form-control{
+  width: 15%;
+}
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px white inset;
+}
+
+
+
+/* ボタンボックス */
+.week-list-box{
+  margin-bottom: 5px;
+}
+.quick-list-box{
+  display: flex;
+  background: lightgray;
+  border-radius: 18px;
+  width: fit-content;
+}
+.form-submit-box{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 30px 0;
+}
+
+
+/* ボタン */
+.submit-button, .delete-button{
+  padding: 7px 22px;
+  border-radius: 18px;
+  color: #fff;
+  border: none;
+}
+.submit-button{
+  background: #F8B400;
+}
+.delete-button{
+  background: #FF6B6B;
+  margin: 0 10px;
+}
+
+.radio-text{
+  padding:7px 20px;
+}
+.check-text{
+  padding: 8px;
+  background: lightgray;
+  border-radius: 15px;
+}
+
+.radio-button, .check-button{
+  display: none;
+}
+
+
+/* ボタンアクティブ*/
+.radio-button:checked +label{
+  background: #F8B400;
+  color: #fff;
+  border-radius: 20px;
+}
+.check-button:checked + label{
+  background: #F8B400;
+  color: #fff;
+}
+
+
+/* フォーム　クイック選択ボックスイン　イベント */
+/* radioでだすチェックボックス */
+.form-toggle{
+  display: none;
+}
+/* 要素イン  */
+.form-togglein{
+  display: block;
+}
+
+
+
+/* バリデーションテキスト */
+.bali-text{
+  margin: 3px 0;
+  font-size: 12px;
+  color: #FF6B6B;
+}
+
+/* フラッシュメッセージ　ボックス・部品 */
+.flash-message-box{
+  display: flex;
+  justify-content: center;
+}
+.flash-message{
+  width: 200px;
+  height: 30px;
+  border-radius: 15px;
+  background: #E4F0FE;
+}
+.flash-message-box p{
+  margin: 3px 0;
+  font-size: 15px;
+  text-align: center;
+  vertical-align: middle;
+  color: #000;
+}
+
+
+
+
+
+/* auth 共通　--------------------------------------------------------- */
+
+
+.auth-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  height: 100%;
+  background: #F8B400;
+  color: gray;
+
+}
+.welcome-box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.welcome-box h1{
+  margin: 15px 5px 0;
+  font-size: 60px;
+  color: #fff;
+  font-weight: 900;
+}
+.welcome-box p{
+  margin: 5px 0;
+}
+.auth-content-box{
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.auth-box{
+  height: fit-content;
+  width: 30%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.auth-box h2{
+  text-align: center;
+  margin: 5px 0;
+  font-size: 30px;
+}
+.auth-box ul{
+  padding: 0;
+}
+.auth-box li{
+  /* width: 100%; */
+  margin: 5px 0;
+}
+
+.auth-form-control{
+  /* height: 30px;
+  width: 100%;
+  border: none;
+  background: #f8f8f8;
+  border-radius: 15px; */
+
+
+  width: 100%;
+  height: 30px;
+  border-radius: 8px;
+  border: solid 1px lightgray;
+  outline-color: #7A82FD;
+  appearance: none;
+  padding: 0 2px;
+
+}
+
+
+
+/* ボタン部品 */
+.login-button{
+  padding: 5px 30px;
+  /* padding: 7px 22px; */
+  border: none;
+  border-radius: 20px;
+  /* border-radius: 20px; */
+  background: #7A82FD;
+  color: #fff;
+  margin: 0 5px;
+  font-size: 16px;
+}
+
+.register-button{
+  /* padding: 7px 40px; */
+  padding: 5px 30px;
+  border-radius: 20px;
+  background: #FF6B6B;
+  color: #fff;
+  margin: 0 5px;
+  font-size: 16px;
+}
+
+
+.auth-item-box{
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+
+
+/* チェックボックスカスタマイズ */
+.auth-box input[type=checkbox] {
+    display:none
+}
+.form-check-label{
+  position:relative;
+  padding:5px 30px;
+  cursor:pointer;
+}
+.form-check-label:before{
+  width:16px; /* チェックボックスの幅 */
+  height:16px; /* チェックボックスの高さ */
+  left:5px;
+  border:1px solid #ccc; /* チェックボックスの枠 */
+  border-radius:5px;
+  margin-top:-8px;
+}
+.form-check-label:after,
+.form-check-label:before{
+  position:absolute;
+  content:"";
+  top:50%
+}
+.form-check-label::after {
+  position: absolute;
+  width: 7px;
+  height: 13px;
+  top: 18px;
+  left: 11px;
+  border-right: 2px solid gray; /* チェックマークの色 */
+  border-bottom: 2px solid gray; /* チェックマークの色 */
+  content: '';
+  margin-top: -12px;
+  opacity: 0;
+  transform: rotate(45deg);
+}
+.auth-box input[type=checkbox]:checked + .form-check-label::after {
+  opacity: 1;
+}
+
+.auth-box p{
+  font-size: 13px;
+  color: red;
+  margin: 5px;
+}
+
+.is-invalid:invalid{
+  border: 1px solid red;
+}
+
+
+
+
+/* safari対応 -------------------------------------------------- */
+
+_:lang(x)+_:-webkit-full-screen-document, body {
+
+  font-family: "YuGothic", "Yu Gothic", "ヒラギノ角ゴシック","Verdana","Helvetica", sans-serif;
+}
+_:lang(x)+_:-webkit-full-screen-document, input, select{
+  -webkit-appearance: none;
+  font-size: 14px;
+}
+_:lang(x)+_:-webkit-full-screen-document, .submit-button, .delete-button{
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+/* レスポンシブ-------------------------------------------------- */
+@media screen and (min-width: 1024px){
+  .mobile-nav{
+    display: none;
+  }
+
+  /* hover */
+  .show-active-button:hover{
+    background: rgba(255, 200, 33, 0.76);
+  }
+  .percentage-info-box a:hover{
+    border-radius: 20px 20px;
+    background: #fff;
+  }
+  .c-header-link-box a:hover{
+    border-radius: 20px 20px;
+    background: #fff;
+  }
+  .user-icon:hover{
+    background: #BEC1FC;
+    color: #fff;
+  }
+  .hum-icon:hover{
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    margin: 5px 10px;
+    background: rgba(242, 237, 235, 0.48);
+  }
+
+
+}
+
+
+@media screen and (max-width: 1023px){
+  body{
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    background: #f3f3f3;
+    overflow: unset;
+
+    font-family: "YuGothic", "Yu Gothic", "ヒラギノ角ゴシック","Verdana","Helvetica", sans-serif;
+  }
+
+  .content-wrapper{
+    width: 100%;
+    height: 100%;
+    background: none;
+  }
+  .main-container{
+    overflow-y: unset;
+  }
+  .common-container{
+    height: 100%;
+
+  }
+
+  a, button, label{
+    /* タップ時の背景色なし */
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+  }
+
+
+  /* コンテンツ共通 -------------------------------- */
+  .show-box, .editlist-box,.percentage-box, .form-container{
+    width: 90%;
+    margin: 20px 0;
+  }
+
+  .percentage-box h2, .editlist-box h2, .form-container h2 {
+    border-bottom: none;
+  }
+
+
+  /* ヘッダー ----------------------------------- */
+  .pc-side-nav{
+    display: none;
+  }
+  header{
+    /* height: 15%; */
+  }
+  .nav-list a{
+    font-size: 16px;
+  }
+  .logout-box{
+    display: none;
+  }
+  .hum-icon{
+    width: 7%;
+    padding: 0;
+
+  }
+
+
+
+  /* モバイル　ナビ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  .mobile-nav {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.29);
+    z-index: 1;
+    top: 49px;
+
+    opacity: 0;
+    display: none;
+
+  }
+
+  /* ナビクローズボタン */
+  .nav-close-button{
+    border: none;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    margin: 20px;
+  }
+  .close-button-top{
+    display: block;
+    border: 1px solid gray;
+    width: 20px;
+    transform: rotate(45deg);
+    position: absolute;
+    right: -10px;
+  }
+  .close-button-bottom{
+    display: block;
+    border: 1px solid gray;
+    width: 20px;
+    transform: rotate(135deg);
+    position: absolute;
+    right: -10px;
+
+  }
+
+  /* ナビイン　アニメーション */
+  .mobile-nav-bg-in{
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    opacity: 1;
+    animation-name: mobile-bg-in;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+  }
+  @keyframes mobile-bg-in {
+    0%{
+      display: block;
+      opacity: 0;
+    }
+    100%{
+      display: block;
+      opacity: 1;
+    }
+  }
+  .mobile-nav-box{
+    width: 70%;
+    height: 100vh;
+    background: #fff;
+    transform: translateX(-100%);
+    position: relative;
+
+  }
+
+  .mobile-nav-in{
+    transform: translateX(0);
+    animation-name: mobilenav-in;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+  }
+  @keyframes mobilenav-in {
+    0%{
+      transform: translateX(-100%);
+    }
+    100%{
+      transform: translateX(0);
+    }
+  }
+
+
+  /* フォーム ------------------------------------ */
+  /* ios デフォルト装飾 none */
+  input,select{
+    -webkit-appearance: none;
+    background: #fff;
+  }
+  .text-form-control, .select-form-control, .number-form-control {
+    color: gray;
+    font-size: 16px;
+    padding: 0 2px;
+    text-align: left;
+  }
+
+  /* 部品 */
+  .radio-text {
+    padding: 7px 17px;
+  }
+  .number-form{
+    width: 20%;
+  }
+
+
+
+  /* index ------------------------------------ */
+  .calendar-container{
+    height: 100%;
+  }
+  .calendar-content-box {
+    height: 100%;
+    padding: 10px;
+    margin: 0;
+  }
+  .calendar-header{
+    margin: 5px 0;
+  }
+
+  .text-sched{
+    font-size: 13px;
+    padding: 1px;
+  }
+
+
+
+
+  /* .percentagelist ------------------------------ */
+  .percentage-table td {
+    height: 60px;
+
+  }
+
+  /* editlist ------------------------------------- */
+  .editlist-table td {
+    height: 35px;
+  }
+
+
+  /* auth ---------------------------------------- */
+  .auth-container{
+    justify-content: flex-start;
+  }
+
+  .auth-box{
+    width: 70%;
+  }
+  .welcome-box{
+    margin: 15px 0;
+  }
+  .welcome-box h1{
+    font-size: 30px;
+  }
+  .welcome-box p{
+    font-size: 16px;
+  }
+
+  .auth-box h2{
+    font-size: 25px;
+  }
+  .auth-form-control{
+    color: gray;
+    font-size: 16px;
+    padding: 0 2px;
+    text-align: left;
+  }
+
+  /* ボタン */
+  .login-button, .register-button{
+    padding: 8px 20px;
+    border-radius: 20px;
+
+  }
+
+
+}
+
+
+
+
+
+
+
+/* スマホ以下 ----------------------------------------------- */
+/* 599 */
+@media screen and (max-width: 599px){
+
+  /* コンテンツ共通 ------------------------------------ */
+  .show-box h2, .editlist-box h2,.percentage-box h2, .form-container h2{
+    font-size: 20px;
+  }
+
+
+  /* header ---------------------------------------- */
+  header{
+    height: 7%;
+  }
+  .c-header-text-box h2, .header-menu-box h2{
+    font-size: 18px;
+  }
+
+
+
+  /* index --------------------------------------- */
+  .text-day{
+    font-size: 10px;
+  }
+  .text-sched{
+    padding: 1px;
+    font-size: 10px;
+  }
+  .today-color{
+    width: 18px;
+    height: 18px;
+  }
+  .text-plus{
+    width: 17px;
+    height: 17px;
+    font-size: 10px;
+
+  }
+
+
+
+  /* percentage ----------------------------------- */
+  .percentage-info-box p {
+    font-size: 18px;
+  }
+
+}
