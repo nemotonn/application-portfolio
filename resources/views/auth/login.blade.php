@@ -57,7 +57,9 @@
               <li>
                 <div class="auth-item-box">
                   <button type="submit" class="login-button">ログイン</button>
+                  <a class="guestlogin-button" href="{{ route('login.guest') }}">ゲストログイン</a>
                 </div>
+
 
               </li>
 							<li>
@@ -66,8 +68,12 @@
                 </div>
 							</li>
 
+
+
+
           </form>
         </ul>
+
 
       </div>
     </div>

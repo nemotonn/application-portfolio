@@ -22,6 +22,7 @@ li{
 }
 button,label,a{
   font-size: 16px;
+  font-family: "ヒラギノ丸ゴ Pro W4", "ヒラギノ角ゴシック","Verdana","Helvetica", sans-serif;
 }
 button{
   font-weight: normal;
@@ -628,6 +629,10 @@ header{
 
 
 /* 入力フォーム部品 */
+input{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 .text-form-control, .select-form-control, .number-form-control{
   width: 100%;
   height: 30px;
@@ -646,6 +651,7 @@ header{
 input:-webkit-autofill {
   box-shadow: 0 0 0 1000px white inset;
 }
+
 
 
 
@@ -834,9 +840,11 @@ input:-webkit-autofill {
 
 
 
+
 /* ボタン部品 */
 .login-button{
-  padding: 5px 30px;
+  width: 100%;
+  padding: 5px 20px;
   /* padding: 7px 22px; */
   border: none;
   border-radius: 20px;
@@ -845,16 +853,32 @@ input:-webkit-autofill {
   color: #fff;
   margin: 0 5px;
   font-size: 16px;
+
+
+}
+.guestlogin-button{
+  width: 100%;
+  padding: 5px 20px;
+  /* padding: 7px 22px; */
+  border-radius: 20px;
+  /* border-radius: 20px; */
+  background: #7A82FD;
+  color: #fff;
+  margin: 0 5px;
+  font-size: 16px;
+  text-align: center;
 }
 
 .register-button{
   /* padding: 7px 40px; */
+
   padding: 5px 30px;
   border-radius: 20px;
   background: #FF6B6B;
   color: #fff;
   margin: 0 5px;
   font-size: 16px;
+
 }
 
 
@@ -926,10 +950,11 @@ _:lang(x)+_:-webkit-full-screen-document, body {
   font-family: "YuGothic", "Yu Gothic", "ヒラギノ角ゴシック","Verdana","Helvetica", sans-serif;
 }
 _:lang(x)+_:-webkit-full-screen-document, input, select{
+  /* デフォルトオフ */
   -webkit-appearance: none;
   font-size: 14px;
 }
-_:lang(x)+_:-webkit-full-screen-document, .submit-button, .delete-button{
+_:lang(x)+_:-webkit-full-screen-document, .submit-button, .delete-button, .guestlogin-button{
   padding: 10px 22px;
   border-radius: 20px;
   font-size: 16px;
@@ -1186,7 +1211,7 @@ _:lang(x)+_:-webkit-full-screen-document, .submit-button, .delete-button{
   }
 
   .auth-box{
-    width: 70%;
+    width: 80%;
   }
   .welcome-box{
     margin: 15px 0;
@@ -1208,12 +1233,31 @@ _:lang(x)+_:-webkit-full-screen-document, .submit-button, .delete-button{
     text-align: left;
   }
 
+
+  .auth-item-box{
+    flex-direction: column;
+    margin: 15px 0;
+  }
+
   /* ボタン */
-  .login-button, .register-button{
+  .login-button{
     padding: 8px 20px;
     border-radius: 20px;
+    margin: 5px 0;
 
   }
+  .guestlogin-button{
+    padding: 8px 0;
+    border-radius: 20px;
+    margin: 5px 0;
+  }
+  .register-button{
+    padding: 8px 20px;
+    border-radius: 20px;
+    margin: 5px 0;
+    text-align: center;
+  }
+
 
 
 }
@@ -1240,6 +1284,10 @@ _:lang(x)+_:-webkit-full-screen-document, .submit-button, .delete-button{
   }
   .c-header-text-box h2, .header-menu-box h2{
     font-size: 18px;
+  }
+  .user-icon{
+    /* font-size: 12px; */
+    padding: 0;
   }
 
 

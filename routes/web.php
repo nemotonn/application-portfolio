@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CalendardataController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,9 @@ Route::prefix('calendardatas')->group(function () {
                   ->name('calendardatas.destroy');
 
 });
+
+//ゲストログイン
+Route::get('guest', [App\Http\Controllers\Auth\LoginController::class, 'guestLogin'])->name('login.guest');
 
 Auth::routes();
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+//use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -37,4 +39,23 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+
+
+
+    //ゲストユーザーID
+    private const GUEST_USER_ID = 10;
+
+    // ゲストログイン処理
+     public function guestLogin()
+    {
+
+        if (Auth::loginUsingId(self::GUEST_USER_ID)) {
+            return redirect('/calendardatas');
+        }
+
+        return redirect('/calendardatas');
+
+    }
+
 }
