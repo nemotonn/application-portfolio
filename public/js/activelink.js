@@ -1,5 +1,5 @@
 
-//ios 画面いっぱいheight できてるのか不明
+//ios 画面いっぱいheight
 const setFillHeight = () => {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);

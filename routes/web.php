@@ -16,12 +16,9 @@ use App\Http\Controllers\Auth\LoginController;
 */
 
 Route::get('/', function () {
-    //return view('welcome');
-    // return view('top');
     return redirect('/login');
-    // loginはauthのミドルウェアはいってるぽいからreturn viewじゃいけなかった
-});
 
+});
 
 
 Route::prefix('calendardatas')->group(function () {
@@ -56,5 +53,3 @@ Route::prefix('calendardatas')->group(function () {
 Route::get('guest', [App\Http\Controllers\Auth\LoginController::class, 'guestLogin'])->name('login.guest');
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

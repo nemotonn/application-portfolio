@@ -3,18 +3,13 @@
 	<head>
 		<meta charset='utf-8'>
 		<title>掃除管理</title>
-		<!-- <link rel="stylesheet"　type="text/css" href="/css/style.css"> -->
 		<link href="{{ asset('css/mainstyle.css') }}" rel="stylesheet">
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-		@stack('css')
+		<!-- @stack('css') -->
 	</head>
 	<body>
-		<!-- <div class="outer-wrapper"> -->
-
 
 		<div class="wrapper">
 
@@ -41,9 +36,6 @@
 				@endguest
 
 			</div>
-		<!-- </div> -->
-
-
 
 			<script src="{{ asset('js/navtoggle.js') }}" defer></script>
 			<script src="{{ asset('js/formtoggle.js') }}" defer></script>

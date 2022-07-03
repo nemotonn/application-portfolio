@@ -8,10 +8,7 @@
 
     <h2>場所・周期登録</h2>
     <div class="form-outer-box">
-
-
       <div class="form-box">
-
 
         <ul>
             <li>
@@ -37,8 +34,6 @@
                 <p class="bali-text">{{$errors->first('placename')}}</p>
               @endif
             </li>
-
-
 
 
           <!-- ★開始日 -->
@@ -151,16 +146,12 @@
 
             </li>
 
-
-
             <li>
               <div class="form-submit-box">
                 <button type="submit" class="submit-button">設定する</button>
               </div>
 
             </li>
-
-
 
 
           {{ Form::close()}}

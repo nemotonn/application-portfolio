@@ -1,11 +1,8 @@
 
-
 @extends('layouts.frame')
 @section('auth')
 
   <div class="auth-container">
-
-
 
     <div class="welcome-box">
       <h1>お掃除マスター!</h1>
@@ -52,8 +49,6 @@
                 </div>
               </li>
 
-
-
               <li>
                 <div class="auth-item-box">
                   <button type="submit" class="login-button">ログイン</button>
@@ -68,12 +63,8 @@
                 </div>
 							</li>
 
-
-
-
           </form>
         </ul>
-
 
       </div>
     </div>

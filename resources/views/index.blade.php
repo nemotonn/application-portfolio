@@ -55,7 +55,6 @@
 
                         @if($i <= 4)
                         <!-- 4件まで表示 -->
-                        <!-- レスポンシブ -->
                         <p class="text-sched">{{Str::limit($scheduleData['placename'], 14)}}</p>
 
 

@@ -117,66 +117,6 @@ class CalendardataController extends Controller
      public function create()
      {
 
-
-       //↓これ多分　違うやつだよね？ためし？
-       // $userSchedules = User::find(7)->schedules;
-       //
-       // //判定するための新しい二次元配列作成
-       // $scheduleArr_1 = [];
-       // foreach($userSchedules as $userSchedule){
-       //   $scheduleArr_1[] = [
-       //        'date'=> date('Ym', strtotime($userSchedule->date)),
-       //        'calendardata_id' => $userSchedule->calendardata_id,
-       //        'placename' => $userSchedule->calendardata->placename,
-       //   ];
-       // }
-       //
-       //
-       //
-       // //percentagesに各年月のレコードあるか判定して、存在しなければ作成
-       // foreach($scheduleArr_1 as $key => $value){
-       //   if(Percentage::where('yearmonth', $value['date'])
-       //    ->where('calendardata_id',$value['calendardata_id'])
-       //    ->doesntExist()){ //存在しなければtrue
-       //
-       //       $percentage = new Percentage;
-       //       $percentage->percentage = 0;
-       //       $percentage->yearmonth = $value['date'];
-       //       $percentage->calendardata_id = $value['calendardata_id'];
-       //       //$percentage->user_id = $id;
-       //       //$percentage->save();
-       //   }
-       // }
-       //--------------------------------------------------------
-
-
-
-       //percentage作成されたら スケジュールにpercentage_idふりわけ-------------------------
-       // $scheduleArr_2 = [];
-       // foreach ($userSchedules as $value) {
-       //   if($value->percentage_id == null){  //スケジュールのpercentage_idがnullなら
-       //     $scheduleArr_2[] = [
-       //            'scheduleId' => $value->id,
-       //            'calendardata_id' => $value->calendardata_id,
-       //            'date'=> date('Ym', strtotime($value->date)),
-       //     ];
-       //   }
-       // }
-       //
-       // foreach($scheduleArr_2 as $value){
-       //   $match = Percentage::where('yearmonth', $value['date'])
-       //    ->where('calendardata_id',$value['calendardata_id'])
-       //    ->get();
-       //
-       //   $schedule = Schedule::find($value['scheduleId']);
-       //   foreach($match as $value){
-       //     $schedule->percentage_id = $value->id;
-       //   }
-       //   //$schedule->save();
-       // }
-
-
-
          return view('create');
      }
 
@@ -186,7 +126,7 @@ class CalendardataController extends Controller
       * @param  \Illuminate\Http\Request  $request
       * @return \Illuminate\Http\Response
       */
-     public function store(StorePostRequest $request) //元 Request $request 一旦避難StorePostRequest
+     public function store(StorePostRequest $request)
      {
 
         $id = $this->user->id;
@@ -366,9 +306,6 @@ class CalendardataController extends Controller
      {
 
         $calendardata = Calendardata::find($calendardata_id);
-
-        //echo $calendardata;
-
         return view('edit', compact('calendardata'));
 
      }
@@ -380,7 +317,7 @@ class CalendardataController extends Controller
       * @param  int  $id
       * @return \Illuminate\Http\Response
       */
-     public function update(UpdatePostRequest $request, $calendardata_id) //元 Request $request, $calendardata_id
+     public function update(UpdatePostRequest $request, $calendardata_id)
      {
 
        $id = $this->user->id;
@@ -423,7 +360,7 @@ class CalendardataController extends Controller
 
        return redirect()->route('calendardatas.edit', ['calendardata_id'=> $calendardata_id])
         ->with('status', '変更が完了しました！');
-       // return view('create');
+
 
      }
 
@@ -434,7 +371,7 @@ class CalendardataController extends Controller
       * @param  int  $id
       * @return \Illuminate\Http\Response
       */
-     public function destroy($calendardata_id) //元$id
+     public function destroy($calendardata_id) 
      {
         $id = $this->user->id;
 
